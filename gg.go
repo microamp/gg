@@ -7,6 +7,7 @@ import (
 )
 
 func send(ch chan<- string, command string, args string) {
+	/* runs command, sends messages to channel */
 	cmd := exec.Command(command, args)
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
